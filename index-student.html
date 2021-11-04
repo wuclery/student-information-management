@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<title>学生端</title>
+	<link rel="stylesheet" href="/students/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/students/css/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="/students/css/jquery.datetimepicker.min.css">
+	<link rel="stylesheet" href="/students/css/uploadImg.css">
+	<link rel="stylesheet" href="/students/css/sider.css">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<!-------------------------------------------------------侧边栏------------------------------------------------------------------->
+	<div class="page-wrapper toggled">
+		<nav id="sidebar" class="sidebar-wrapper shadow">
+			<div class="sidebar-content">
+				<button class="navbar-toggler" id="toggle-sidebar" data-toggle="collapse" data-target="#navbarCollapse">
+					<i class="fa fa-bars"></i>
+				</button>
+				<div class="sidebar-brand">
+					<a href="#">SZIIT</a>
+				</div>
+				<div class="accordion " id="wrapper">
+					<div class="card  m-3">
+						<div class="card-header " style="background-color:  rgb(64 86 190);">
+							<a type="button" data-toggle="collapse" data-target="#content">
+								<div class="row text-light">
+									<img class="img-fluid col-4 " src="img/普通学生.svg" />
+									<div class=" font-weight-bolder col-auto" style="font-size: 14px;">
+										<p class="mt-3 ">姓名:<span id="name">XXX</span></p>
+										<p style="font-size: 14px;">学号:<span id="studentId">1234567890</span></p>
+									</div>
+									<div class=" mt-5"><i class="bi bi-caret-down-fill"></i></div>
+								</div>
+							</a>
+						</div>
+						<div class="collapse " id="content" data-parent="#wrapper">
+							<div class="care-body ">
+								<ul class=" nav-pills font-zi nav d-block font-weight-bolder text-left"
+									style="font-size: 14px;">
+									<li class="nav-item">
+										<a class="nav-link mt-2 " href="#information" data-toggle="tab">
+											<span>
+												<i class="bi bi-pencil-square mr-3"></i>修改密码
+											</span>
+										</a>
+									</li>
+									<li class="nav-item mt-2">
+										<a class="nav-link  " href="/students/login.html" data-toggle="tab">
+											<span>
+												<i class="bi bi-box-arrow-right mr-3"></i>退出登录
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--选修卡导航条目-->
+				<ul class=" nav-pills mt-5 nav d-block font-weight-bolder m-3 font-zi" style="font-size: 14px;">
+					<li class="nav-item ">
+						<a class="nav-link active " href="#information" data-toggle="tab">
+							<span>
+								<i class="bi bi-border-style mr-3"></i>基本信息
+							</span>
+						</a>
+					</li>
+					<li class="nav-item mt-2">
+						<a class="nav-link " href="#score" data-toggle="tab">
+							<span>
+								<i class="bi bi-card-text mr-3"></i>成绩信息
+							</span>
+						</a>
+					</li>
+					<li class="nav-item mt-2">
+						<a class="nav-link " href="#honor" data-toggle="tab">
+							<span>
+								<i class="bi bi-award mr-3"></i>个人荣誉
+							</span>
+						</a>
+					</li>
+					<li class="nav-item mt-2">
+						<a class="nav-link " href="#notice" data-toggle="tab">
+							<span>
+								<i class="bi bi-megaphone mr-3"></i>公告栏
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<main class="page-content">
+			<div class="container-fluid">
+				<div class="tab-content">
+					<!---------------------------------------information----------------------------------------------->
+					<div class="tab-pane fade show active text-left" id="information">
+						<div class="row ">
+							<div class=" col-12 col-md-4  ml-md-0 ml-4  ">
+								<div class="card shadow">
+									<div class="text-center">
+										<img class="mt-3 card-img-top " src="img/普通学生.svg" alt=""
+											style="border: 1px solid ;max-width: 130px;">
+									</div>
+									<div class="card-body">
+										<div class="card-title container">
+											<p class=" font-weight-bolder mt-2 text-center" style="font-size: 24px; ;"
+												name="name">XXX</p>
+										</div>
+										<div class="container-fluid">
+											<p class="mb-2 ">
+												<i class="bi bi-people " style="font-size: 18px;"></i>
+												<span class="ml-2" style="font-size: 14px;">学号：1234567890</span>
+											</p>
+											<p class="mb-2 ">
+												<i class="bi bi-people " style="font-size: 18px;"></i>
+												<span class="ml-2" style="font-size: 14px;">班级:啊吧啊吧</span>
+											</p>
+											<p class="mb-2 ">
+												<i class="bi bi-bank2 " style="font-size: 18px;"></i>
+												<span class="ml-2" style="font-size: 14px;">宿舍号:Ab-123</span>
+											</p>
+										</div>
+
+										<hr />
+										<div class="card-subtitle mt-2">
+											<p class="font-weight-bolder lead">目标</p>
+											<p id="punishment">woshihaohaizimeiyousanbichufenzhezhongdongxi</p>
+										</div>
+										<hr />
+										<div class="card-subtitle mt-2">
+											<p class="font-weight-bolder lead">自我评价</p>
+											<p id="myabout">wojuedewohenshuaibuyaochongbaiwo</p>
+										</div>
+										<hr />
+										<div class="card-subtitle mt-2">
+											<p class="font-weight-bolder lead">个人荣誉</p>
+											<p id="punishment">woshihaohaizimeiyousanbichufenzhezhongdongxi</p>
+										</div>
+										<hr />
+										<div class="card-subtitle mt-2">
+											<p class="font-weight-bolder lead">三比/处分情况</p>
+											<p id="punishment">woshihaohaizimeiyousanbichufenzhezhongdongxi</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class=" col-12 col-md-8 ml-4 ml-md-0 mt-2 mt-md-0">
+								<div class="shadow card">
+									<div class="card-header">
+										基本信息
+									</div>
+									<div class="card-body">
+										<div class="p-2" style="border: 1px solid rgba(0,0,0,.125);border-radius: 5px;">
+											<div class="card-title pt-1 font-weight-bolder">USER INFORMATION</div>
+											<hr class="mt-0" />
+											<div class="container form-row">
+												<div class="col-6 form-group">
+													<label for="title">姓名</label>
+													<p><input type="text" required readonly="readonly"
+															class="form-control" id="title" value="XXX"></p>
+													<label for="title">出生日期
+														<span class="text-danger ml-1">*</span>
+													</label>
+													<p>
+														<input type="text" id="datetimepicker" name="datetimepicker"
+															value=" " class="form-control" />
+													</p>
+													<label for="title">院系</label>
+													<p><input type="text" readonly="readonly" value="软件学院"
+															class="form-control" /></p>
+													<label for="title">证件类型</label>
+													<p><input type="text" readonly="readonly" value=" 身份证"
+															class="form-control" /></p>
+												</div>
+
+												<div class="col-6 ">
+													<label for="title">性别<span class="text-danger ml-1">*</span></label>
+													<p><select class="form-control" value="" required="required">
+															<option value="wu" selected="selected">无</option>
+															<option value="boy">男</option>
+															<option value="girl">女</option>
+														</select></p>
+													<label for="title">政治面貌<span
+															class="text-danger ml-1">*</span></label>
+													<p><select class="form-control" value="" required="required">
+															<option selected="selected">无</option>
+															<option>群众</option>
+															<option>共青团员</option>
+															<option>中共党员</option>
+															<option>民革党员</option>
+														</select></p>
+													<label for="title">专业</label>
+													<p><input type="text" readonly="readonly" value=" 软件技术"
+															class="form-control" /></p>
+													<label for="title">证件号</label>
+													<p><input type="text" readonly="readonly"
+															value=" 440306202101013697" class="form-control" /></p>
+												</div>
+												<div class="col-12">
+													<label for="title">家庭住址<span
+															class="text-danger ml-1">*</span></label>
+													<p><input type="text" class="form-control" /></p>
+												</div>
+											</div>
+										</div>
+										<div class="p-2 mt-4"
+											style="border: 1px solid rgba(0,0,0,.125);border-radius: 5px;">
+											<div class="card-subtitle mt-1 font-weight-bolder">CONTACT INFORMATION
+											</div>
+											<hr class="mt-2" />
+											<div class="container row">
+												<div class="col-6">
+													<label for="title">电话号码</label>
+													<p><input type="text" class="form-control" value="12345678910"
+															readonly="readonly" /></p>
+													<label for="title">QQ</label>
+													<p><input type="text" class="form-control" /></p>
+												</div>
+
+												<div class="col-6 ">
+													<label for="title">邮箱</label>
+													<p><input type="text" class="form-control" /></p>
+													<label for="title">微信</label>
+													<p><input type="text" class="form-control" /></p>
+												</div>
+											</div>
+										</div>
+										<div class="p-2 mt-4 "
+											style="border: 1px solid rgba(0,0,0,.125);border-radius: 5px;">
+											<div class="card-subtitle mt-1 font-weight-bolder">ABOUT MYSELF</div>
+											<hr class="mt-2" />
+											<div class="col-12">
+												<label for="priceStatement">自我评价</label>
+												<p><textarea class="form-control flex-grow-1" maxlength="200" required
+														id="priceStatement" style="height:100px;"
+														placeholder="不超过200字"></textarea></p>
+											</div>
+											<div class="col-12">
+												<label for="priceStatement">目标</label>
+												<p><textarea class="form-control flex-grow-1" maxlength="200" required
+														id="priceStatement" style="height:100px;"
+														placeholder="不超过200字"></textarea></p>
+											</div>
+										</div>
+									</div>
+
+									<div class="m-1 mb-5 container text-center">
+										<button type="submit" id="submit"
+											class="btn btn-outline-primary w-25 font-weight-bolder lead">保
+											存</button>
+									</div>
+									<div class="alert alert-success alert-dismissible fade text-center" id="sub-success"
+										style="position: absolute;bottom: 2%;width: 60%;right: 0%;">
+										<button type="button" class="close" data-dismiss="alert">&times;</button>
+										<strong>保存成功!</strong>
+									</div>
+									<div class="alert alert-danger alert-dismissible fade text-center" id="sub-danger"
+										style="position: absolute;bottom: 2%;width: 60%;right: 0%;">
+										<button type="button" class="close" data-dismiss="alert">&times;</button>
+										<strong>保存失败！请检查格式是否正确或者稍后再试</strong>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-------------------------------------------------score------------------------------------->
+					<div class="tab-pane fade" id="score">
+						<div class="mx-5 mt-3 clearfix">
+							<!-- row1 -->
+							<div class="row my-2">
+								<form action="" class="col-lg-4 col-sm-6 col-9 ml-0 ml-md-auto mr-auto mr-md-0">
+									<select name="select_term" id="select_term" class="form-control">
+										<option>学期选择</option>
+										<option value="">2021-2022</option>
+										<option value="">2020-2021</option>
+										<option value="">2019-2020</option>
+										<option value="">2018-2019</option>
+									</select>
+								</form>
+								<span class="my-auto">导出</span>
+							</div>
+							<!-- row2 -->
+							<div id="paiming" class="row text-center">
+								<div class="card col-lg-2 col-md-5 col-10 mx-md-auto ml-3 my-2">
+									<h6 class="card-header">班级排名</h6>
+									<div class="card-body">6</div>
+								</div>
+								<div class="card col-lg-2 col-md-5 col-10 mx-md-auto ml-3 my-2">
+									<h6 class="card-header">平均绩点</h6>
+									<div class="card-body">4.25</div>
+								</div>
+								<div class="card col-lg-2 col-md-5 col-10 mx-md-auto ml-3 my-2">
+									<h6 class="card-header">加权平均分</h6>
+									<div class="card-body">94</div>
+								</div>
+								<div class="card col-lg-2 col-md-5 col-10 mx-md-auto ml-3 my-2">
+									<h6 class="card-header">加权平均分</h6>
+									<div class="card-body">94</div>
+								</div>
+							</div>
+							<!-- table -->
+							<div class="table-responsive" id="score-table">
+								<table class="table text-center table-hover">
+									<thead class="bg-light">
+										<tr>
+											<th class="align-middle" scope="col"></th>
+											<th style="min-width: 100px;" class="align-middle" scope="col">课程名称<i
+													class="bi bi-caret-down-fill"></i></th>
+											<th style="min-width: 100px;" class="align-middle" scope="col">学分<i
+													class="bi bi-caret-down-fill"></i></th>
+											<th style="min-width: 100px;" class="align-middle" scope="col">成绩<i
+													class="bi bi-caret-down-fill"></i></th>
+											<th style="min-width: 100px;" class="align-middle" scope="col">课程类型<i
+													class="bi bi-caret-down-fill"></i></th>
+											<th style="min-width: 100px;" class="align-middle" scope="col">课程学期<i
+													class="bi bi-caret-down-fill"></i></th>
+											<th style="min-width: 100px;" class="align-middle" scope="col">任课老师<i
+													class="bi bi-caret-down-fill"></i></th>
+										</tr>
+									</thead>
+									<tbody id="score-tbody">
+										<!-- <tr>
+												<td class="align-middle"><input type="checkbox"></td>
+												<td class="align-middle">高等数学</td>
+												<td class="align-middle">4</td>
+												<td class="align-middle">100</td>
+												<td class="align-middle">必修课</td>
+												<td class="align-middle">2021-2022(1)</td>
+												<td class="align-middle">李仕贤</td>
+											</tr> -->
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-------------------------------------------------honor------------------------------------->
+					<div class="tab-pane fade" id="honor">
+						<h3 class="text-center">个人荣誉</h3>
+						<!-- Button trigger modal -->
+						<button type="button" class="btn btn-primary float-right mb-2 pr-3 pl-3" data-toggle="modal"
+							data-target="#staticBackdrop">添加</button>
+
+						<!-- Modal -->
+						<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+							tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="staticBackdropLabel">个人荣誉</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<!-- 添加个人荣誉内容 -->
+										<form>
+											<div class="form-group row ">
+												<!-- 姓名 -->
+												<label for="inputtext" class="col-sm-2 col-form-label">姓名:</label>
+												<div class="col-sm-9 ml-3 ">
+													<input type="text" class="form-control mb-2 " id="inputtext">
+												</div>
+												<!-- 学号 -->
+												<label for="inputtext" class="col-sm-2 col-form-label">学号:</label>
+												<div class="col-sm-9 ml-3">
+													<input type="text" class="form-control mb-2" id="inputtext">
+												</div>
+												<!-- 班级 -->
+												<label for="inputtext" class="col-sm-2 col-form-label ">班级:</label>
+												<div class="col-sm-9 ml-3">
+													<input type="text" class="form-control mb-2" id="inputtext">
+												</div>
+												<!-- 奖项名称 -->
+												<label for="inputtext" class="col-sm-auto col-form-label">奖项名称:</label>
+												<div class="col-sm-9">
+													<input type="text" class="form-control mb-2" id="inputtext">
+												</div>
+												<!-- 备注信息 -->
+												<label for="inputtext" class="col-sm-auto col-form-label ">备注信息:</label>
+												<div class="col-sm-9">
+													<input type="text" class="form-control mb-2" id="inputtext">
+												</div>
+												<!-- 上传凭证 -->
+												<label for="inputtext" class="col-sm-auto col-form-label ">上传凭证:</label>
+												<!-- 图片上传插件 -->
+												<div class="main text-left">
+													<div class="upload-content">
+														<div class="content-img">
+															<ul class="content-img-list"></ul>
+															<div class="file">
+																<i class="gcl gcladd"></i>
+																<input type="file" name="file" accept="image/*"
+																	id="upload" multiple>
+															</div>
+														</div>
+														<div class="modal fade bs-example-modal-lg" tabindex="-1"
+															role="dialog" aria-labelledby="myLargeModalLabel">
+															<div class="modal-dialog modal-lg" role="document">
+																<div class="modal-content">
+
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</form>
+										<!-- 申请审核 -->
+
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary btn-md btn-block">申请审核</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<table class="table table-striped text-center">
+							<thead>
+								<tr>
+									<th scope="col">序号</th>
+									<th scope="col">荣誉名称</th>
+									<th scope="col">日期</th>
+									<th scope="col">备注（奖项名次）</th>
+									<th scope="col">奖项凭证</th>
+								</tr>
+							</thead>
+							<tbody id="honor-tbody">
+
+							</tbody>
+						</table>
+						<div class="position-fixed fixed-bottom d-flex justify-content-between">
+							<div></div>
+							<div></div>
+							<div>
+								<!-- 分页器 -->
+								<ul class="pagination ">
+									<li class="page-item disabled">
+										<a class="page-link">Previous</a>
+									</li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item">
+										<a class="page-link" href="#">Next</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<!-- 草稿箱 -->
+								<!-- Button trigger modal -->
+								<button type="button" class="btn btn-primary mx-3" data-toggle="modal"
+									data-target="#static">草稿箱</button>
+							</div>
+						</div>
+						<!-- Modal -->
+						<div class="modal fade" id="static" data-backdrop="static" data-keyboard="false" tabindex="-1"
+							aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="static">草稿箱</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										...
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary">Understood</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!----------------------------------------------notice------------------------------------------->
+					<div class="tav-pane fade" id="notice">
+						<p class="text-center">公告栏</p>
+
+						<div class="container-fluid p1-4 pt-3">
+
+							<div class="row ">
+
+								<!-- 中间内容 -->
+								<div class="col-md  rounded-lg overflow-auto">
+									<div class="row ">
+										<div class="col-lg-8">
+											<div class="input-group">
+												<span class="input-group-btn"></span>
+
+											</div>
+											<!-- /input-group -->
+										</div>
+										<!-- /.col-lg-6 -->
+										<div class="col-lg-4 ">
+											<div class="input-group bu my-2">
+												<input type="text" class="form-control" placeholder="Search for...">
+												<span class="input-group-btn mx-2">
+													<button class="btn btn-default text-light"
+														style="background-color: rgb(64 86 190);"
+														type="button">搜索</button>
+												</span>
+											</div>
+											<!-- /input-group -->
+										</div>
+										<!-- /.col-lg-6 -->
+									</div>
+									<!-- /.row -->
+
+									<!-- 表格 -->
+									<div class="accordion" id="accordionExample">
+										<div class="card">
+											<div class="card-header title" style="background-color: rgb(64 86 190);"
+												id="headingTwo" data-toggle="collapse" data-target="#collapseTwo"
+												aria-expanded="false" aria-controls="collapseTwo">
+												<h4 class="mb-0 text-light text-left">
+													2021年11月
+												</h4>
+											</div>
+											<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+												data-parent="#accordionExample">
+												<div class="card-body">
+													<!-- 列表组 -->
+													<div class="list-group ">
+														<!-- 每一行 -->
+														<button type="button"
+															class=" list-group-item list-group-item-action ">
+															<div class="row">
+																<div class="col-6 text-left">
+																	<a href="card.html" target=“_blank”>停水通知</a>
+																</div>
+																<div class="col text-right">2021.09.15</div>
+															</div>
+														</button>
+														<button type="button"
+															class=" list-group-item list-group-item-action ">
+															<div class="row">
+																<div class="col-6 text-left">
+																	<a href="card.html" target=“_blank”>停水通知</a>
+																</div>
+																<div class="col text-right">2021.09.15</div>
+															</div>
+														</button>
+														<button type="button"
+															class=" list-group-item list-group-item-action ">
+															<div class="row">
+																<div class="col-6 text-left">
+																	<a href="card.html" target=“_blank”>停水通知</a>
+																</div>
+																<div class="col text-right">2021.09.15</div>
+															</div>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+<script src="/students/js/jquery-3.6.0.min.js" charset="utf-8"></script>
+<script src="/students/js/bootstrap.bundle.min.js" charset="utf-8"></script>
+<script src="/students/js/jquery.datetimepicker.full.min.js" charset="utf-8"></script>
+<script src="/students/js/sider-menu.js" charset="utf-8"></script>
+<script src="/students/js/uploadImg.js" charset="utf-8"></script>
+
+</html>

@@ -1,0 +1,101 @@
+* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				width: 100%;
+				height: 100%;
+				font-size: 16px;
+			}
+
+			body {
+				width: 100%;
+				height: 100%;
+				-moz-user-select: none;
+				/*火狐*/
+				/*禁止用户在页面选择文字*/
+				-webkit-user-select: none;
+				/*webkit浏览器*/
+				-ms-user-select: none;
+				/*IE10*/
+				-khtml-user-select: none;
+				/*早期浏览器*/
+				user-select: none;
+			}
+
+			.code {
+				padding-top: 50px;
+				width: 400px;
+				margin: 0 auto;
+			}
+
+			.input-val {
+				width: 295px;
+				background: #ffffff;
+				height: 2.8rem;
+				padding: 0 2%;
+				border-radius: 5px;
+				border: none;
+				border: 1px solid rgba(0, 0, 0, .2);
+				font-size: 1.0625rem;
+			}
+
+			#canvas {
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+				cursor: pointer;
+				float: right;
+				width: 25%;
+				margin: 2em 0 0;
+			}
+@media screen and ( max-width: 1480px ){
+	#canvas {
+		margin: 2.2em 0 0;
+	}
+} 
+
+@media screen and ( max-width: 1350px ){
+	#canvas {
+		margin: 2.4em 0 0;
+	}
+} 
+@media screen and ( max-width: 1290px ){
+	#canvas {
+		margin: 2.2em 0 0;
+	}
+} 
+@media screen and ( max-width: 992px ){
+	#canvas {
+		margin: 2.5em 0 0;
+	}
+} 
+@media screen and ( max-width: 900px ){
+	#canvas {
+		margin: 3.4em 0 0;
+	}
+}
+ @media screen and ( max-width: 642px ){
+ 	#canvas {
+ 		margin: 3.9em 0 0;
+ 	}
+ }
+@media screen and ( max-width:490px ){
+	#canvas {
+		margin: 4em 0 0;
+	}
+} 
+			.btn {
+				width: 100px;
+				height: 40px;
+				background: #f1f1f1;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+				margin: 20px auto 0;
+				display: block;
+				font-size: 1.2rem;
+				color: #e22e1c;
+				cursor: pointer;
+			}
